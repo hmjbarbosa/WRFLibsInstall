@@ -5,7 +5,7 @@ WRF and other atmospheric models and tools. In a nutshell, there is:
 
 - one config script for each compiler (gcc, amd, intel)
 - one install script for each library that calls the config script
-- one main script that calls all of install scripts. 
+- one main script that calls all install scripts. 
 
 ## Usage
 
@@ -16,17 +16,56 @@ compile using gcc you should:
 ln -s base_gcc.sh base.sh
 ```
 
-Second, run the main script:
+Second, edit the config script and set the installation directory. It
+is a good practice to include the compiler version on the directory
+name, for instance:
+```
+export base=/storage/WRF/Libs/gcc_13.3.0 
+```
+
+Third, run the main script:
 
 ```
 ./all.sh
 ```
 
 By default, the script will stop and wait for confirmation before
-proceeding with each library. You can edit the script and set `export
-WAITCLICK=0` if you don't want the interruptions. In that case, you
-might want to `export LOG=1` so that the output of the installation of
-each library goes into a .log file.
+proceeding with each library. This is very helpfull for the first time
+you are using the script, as you will be able to keep looking at the
+compilation messages and detect any errors or weird warning messages
+that might require your attention.
+
+## Advanced usage
+
+You can edit the main script and set
+```
+export WAITCLICK=0
+```
+if you don't want to be prompted before each installation. 
+
+In that case, you might want to also set
+```
+export LOG=1
+```
+
+so the output of the installation of each library goes into a separate
+.log file instead of the screen. Make sure to check all the log files
+for error and warnings aftward!
+
+Some of the librarie take a long time to compile, e.g., MPICH and
+HDF5. If you want to see the content of the LOG file while the compilation is
+on-going, you can use a different shell and do: 
+```
+tail -f hdf5.log
+```
+
+Remember, you can also call the installation scripts
+individually. This is particularly useful for debuging, for instance,
+if just one of the libraries is not compiling correclty in your
+system:
+```
+./hdf5.sh
+```
 
 ## Libraries
 
@@ -58,17 +97,6 @@ dependencies:
   - hdf5
   - zlib
   - szip
-
-
-To compile everything, just call the main:
-
-```
-./all.sh
-```
-
-Config files are provide for gcc, amd, and intel compilers:
-
-- base
 
 
 
