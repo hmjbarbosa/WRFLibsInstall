@@ -27,13 +27,8 @@ export F77=${base}/mpich/bin/mpif77
 export F90=${base}/mpich/bin/mpif90
 
 autoreconf -i -f
-
 ./configure --prefix=${NCDIR} \
-	    --enable-netcdf-4 --disable-dap --enable-shared \
-	    --enable-netcdf4 --enable-static --enable-hdf5 \
-	    --enable-parallel-tests
-
-#configure: WARNING: unrecognized options: --enable-netcdf-4, --disable-dap, --enable-netcdf4, --enable-hdf5
+	    --enable-shared --enable-static --enable-parallel-tests
 
 automake -a -f 
 
