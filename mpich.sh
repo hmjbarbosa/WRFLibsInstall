@@ -42,5 +42,6 @@ automake -a -f
 make -j 10
 make -j 10 check
 make install
+make installcheck
 
 #
