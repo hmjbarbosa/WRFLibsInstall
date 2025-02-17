@@ -30,4 +30,19 @@ export FCFLAGS=$amdopt
 
 export CPP='clang -E'
 export CXXCPP='clang++ -E'
+
+#
+# Make sure the compilers can be accessed
+TMP=`which ${CC} `; if [ ! -f "$TMP" ] ; then echo "Not found CC=$TMP"; exit; fi
+TMP=`which ${CXX}`; if [ ! -f "$TMP" ] ; then echo "Not found CXX=$TMP"; exit; fi
+TMP=`which ${F77}`; if [ ! -f "$TMP" ] ; then echo "Not found F77=$TMP"; exit; fi
+TMP=`which ${F90}`; if [ ! -f "$TMP" ] ; then echo "Not found F90=$TMP"; exit; fi
+TMP=`which ${FC} `; if [ ! -f "$TMP" ] ; then echo "Not found FC=$TMP"; exit; fi
+#
+# For AMD, double-check they point to something from AMD
+TMP=`which ${CC} `; if [ -z `echo $TMP | grep -i -e amd -e aocc` ] ; then echo "CC=$TMP is not from AMD!"; exit; fi
+TMP=`which ${CXX}`; if [ -z `echo $TMP | grep -i -e amd -e aocc` ] ; then echo "CXX=$TMP is not from AMD!"; exit; fi
+TMP=`which ${F77}`; if [ -z `echo $TMP | grep -i -e amd -e aocc` ] ; then echo "F77=$TMP is not from AMD!"; exit; fi
+TMP=`which ${F90}`; if [ -z `echo $TMP | grep -i -e amd -e aocc` ] ; then echo "F90=$TMP is not from AMD!"; exit; fi
+TMP=`which ${FC} `; if [ -z `echo $TMP | grep -i -e amd -e aocc` ] ; then echo "FC=$TMP is not from AMD!"; exit; fi
 #
