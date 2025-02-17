@@ -1,15 +1,19 @@
 #
 . base.sh 
 
+#for comp in $CC $CXX $F77 $F90 $FC ; do
+#done
+#
+
 tag='2.1.1'
 cd Build
 rm -Rf szip-${tag}
 tar -xzvf ../Downloads/szip-${tag}.tar.gz
 cd szip-${tag}
 
-autoreconf -i -f
+#autoreconf -i -f
 ./configure --prefix=${base}/szip --enable-shared --enable-static
-automake -a -f 
+#automake -a -f 
 
 make -j 4
 make check

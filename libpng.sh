@@ -18,9 +18,9 @@ export CPPFLAGS="${CPPFLAGS} -I${base}/zlib/include"
 #export F77=${base}/mpich/bin/mpif77
 #export F90=${base}/mpich/bin/mpif90
 
-autoreconf -i -f
+#autoreconf -i -f
 ./configure --prefix=${base}/libpng  --enable-shared --with-zlib-prefix=${base}/zlib
-automake -a -f
+#automake -a -f
 
 make -j 4
 make check
