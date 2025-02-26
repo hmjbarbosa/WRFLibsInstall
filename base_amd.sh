@@ -3,7 +3,7 @@
 #
 export comp='amd' 
 export base=/storage/WRF/Libs/aocc-5.0.0
-export amdopt=' -std=gnu99  -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-sign-conversion -Wno-implicit-function-declaration -Wno-incompatible-function-pointer-types -Wno-unused-command-line-argument -Wno-deprecated-non-prototype -fPIC -fPIE -O2 '
+export amdopt=' -std=gnu99  -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-sign-conversion -Wno-implicit-function-declaration -Wno-incompatible-function-pointer-types -Wno-unused-command-line-argument -Wno-deprecated-non-prototype -Wno-strict-prototypes -fPIC -fPIE -O2 '
 
 # MPICH needs "asm" which is a gnu extension. So we should
 # use -std=gnu99 instead of -std=c99
