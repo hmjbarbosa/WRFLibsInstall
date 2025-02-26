@@ -3,7 +3,7 @@
 #
 export comp='intel'
 export base=/storage/WRF/Libs/oneapi-2024.2.1
-export intelopt=' -std=gnu99 -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-sign-conversion -Wno-implicit-function-declaration -Wno-incompatible-function-pointer-types -Wno-unused-command-line-argument -Wno-deprecated-non-prototype -fPIC -fPIE -O2'
+export intelopt=' -std=gnu99 -Wno-incompatible-pointer-types -Wno-int-conversion -Wno-sign-conversion -Wno-implicit-function-declaration -Wno-incompatible-function-pointer-types -Wno-unused-command-line-argument -Wno-deprecated-non-prototype -Wno-strict-prototypes -fPIC -fPIE -O2'
 #  -mcmodel=large
 
 # MPICH needs "asm" which is a gnu extension. So we should
