@@ -15,7 +15,7 @@ export NCDIR=${base}/netcdf
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$SZIPD/lib:$ZLIBD/lib:$HDF5D/lib:$PNETC/lib:$NCDIR/lib
 
 export CPPFLAGS=$CPPFLAGS" -I${NCDIR}/include -I${PNETC}/include -I${HDF5D}/include -I${SZIPD}/include -I${ZLIBD}/include "
-export LDFLAGS=$LDFLAGS" -L${NCDIR}/lib -L${PNETC}/lib -L${HDF5D}/lib -L${SZIPD}/lib -L${ZLIBD}/lib "
+export LDFLAGS=$LDFLAGS" -L${NCDIR}/lib -L${PNETC}/lib -L${HDF5D}/lib -L${SZIPD}/lib -L${ZLIBD}/lib ${NCLIBS}"
 
 export LIBS=`${NCDIR}/bin/nc-config --libs`
 
