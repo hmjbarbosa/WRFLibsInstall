@@ -30,6 +30,7 @@ autoreconf -i -f
 ./configure --prefix=${NCDIR} \
 	    --enable-shared --enable-static --enable-parallel-tests
 
+# --enable-large-file-tests --with-pic
 automake -a -f 
 
 # For AMD

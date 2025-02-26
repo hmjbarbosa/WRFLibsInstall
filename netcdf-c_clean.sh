@@ -10,12 +10,15 @@ cd netcdf-c-${tag}
 autoreconf -i -f
 
 ./configure --prefix=${base}/netcdf_clean \
-	    --disable-hdf5 #--disable-shared --disable-dap \
+	    --disable-netcdf-4 --disable-dap \
+	    --disable-plugins
+# --disable-hdf5 
+#	    --disable-nczarr-filters --disable-nczarr \
 #	    --disable-parallel4 --enable-netcdf4 --enable-netcdf-4
 #--disable-libxml2 --disable-dap-remote-tests \
-#	    --disable-byterange --disable-plugins
-#--disable-nczarr-filters
-#--disable-nczarr
+#	    --disable-byterange 
+#
+#
 
 automake -a -f 
 

@@ -52,7 +52,7 @@ so the output of the installation of each library goes into a separate
 .log file instead of the screen. Make sure to check all the log files
 for error and warnings aftward!
 
-Some of the librarie take a long time to compile, e.g., MPICH and
+Some of the libraries take a long time to compile, e.g., MPICH and
 HDF5. If you want to see the content of the LOG file while the compilation is
 on-going, you can use a different shell and do: 
 ```
@@ -65,6 +65,20 @@ if just one of the libraries is not compiling correclty in your
 system:
 ```
 ./hdf5.sh
+```
+
+## AMD and INTEL
+
+For AMD and INTEL compilers, make sure to have them loaded (i.e., available on your PATH) before running `all.sh` or any of the install scripts.
+
+Depending on your system, you might need to load a module:
+```
+module load aocc/5.0.0
+```
+
+Or call a script:
+```
+source /opt/intel/oneapi/setvars.sh
 ```
 
 ## Libraries

@@ -15,12 +15,6 @@ cd hdf5-${ver}
 #sed -i '/\/\/int/d' tools/lib/h5diff.c
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${base}/szip/lib:${base}/zlib/lib
 
-if [[ "$comp" == "intel" ]] ; then
-    # fix issue of -loopopt=0 confused with a library
-    # when using ifx 
-    autoreconf -i -f
-fi
-
 #export LDFLAGS="${LDFLAGS} -L${base}/mpich/lib"
 #export CPPFLAGS="${CPPFLAGS} -I${base}/mpich/include"
 export PATH="${base}/mpich/bin:${PATH}"
@@ -30,6 +24,8 @@ export FC=${base}/mpich/bin/mpif90
 export F77=${base}/mpich/bin/mpif77
 export F90=${base}/mpich/bin/mpif90
 
+# fix issue of -loopopt=0 confused with a library
+# when using ifx (intel)
 autoreconf -i -f
 
 ./configure --prefix=${base}/hdf5 \
