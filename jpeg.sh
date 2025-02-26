@@ -1,7 +1,7 @@
 #
 . base.sh
 
-tag='8d'
+tag='9f'
 cd Build
 rm -Rf jpeg-${tag}
 tar -xzvf ../Downloads/jpegsrc.v${tag}.tar.gz

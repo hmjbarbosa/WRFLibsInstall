@@ -1,7 +1,7 @@
 #
 . base.sh
 
-tag='1.900.1'
+tag='1.900.29'
 cd Build
 rm -Rf jasper-${tag}
 tar -xzvf ../Downloads/jasper-${tag}.tar.gz
