@@ -1,3 +1,5 @@
+# Remember to load the AMD modules
+# module load aocc/5.0.0
 #
 export comp='amd' 
 export base=/storage/WRF/Libs/aocc-5.0.0
@@ -22,11 +24,11 @@ export CXXFLAGS=' -DpgiFortran '
 export CPPFLAGS=$CXXFLAGS
 
 export F77='flang'
-export FFLAGS=$amdopt
+export FFLAGS=
 
 export FC='flang'
 export F90='flang'
-export FCFLAGS=$amdopt
+export FCFLAGS=
 
 export CPP='clang -E'
 export CXXCPP='clang++ -E'
