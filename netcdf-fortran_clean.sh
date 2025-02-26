@@ -20,7 +20,7 @@ automake -a -f
 # For AMD
 # https://github.com/Unidata/netcdf-fortran/issues/309
 # libtool script has to be patched for flang (after configure) 
-#sed -i -e 's/wl=""/wl="-Wl,"/g' libtool
+sed -i -e 's/wl=""/wl="-Wl,"/g' libtool
 
 if (( $WAITCLICK )) ; then read -p "netcdf-fortran_clean: compile? " -n1 -s ; fi
 make -j 10

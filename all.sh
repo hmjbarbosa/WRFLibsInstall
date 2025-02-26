@@ -14,6 +14,8 @@ libs='  zlib
 	szip
 	libpng
 	jasper
+	netcdf-c_clean
+	netcdf-fortran_clean
 	mpich
 	hdf5
 	pnetcdf
