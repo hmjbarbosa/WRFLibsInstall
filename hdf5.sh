@@ -13,10 +13,10 @@ cd hdf5-${ver}
 # remove line that starts with C++ comments in C source code
 #sed -i '/^\/\//d' tools/lib/h5tools_utils.c
 #sed -i '/\/\/int/d' tools/lib/h5diff.c
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${base}/szip/lib:${base}/zlib/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${base}/szip/lib:${base}/zlib/lib
+export LDFLAGS="${LDFLAGS} -L${base}/szip/lib -L${base}/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I${base}/szip/include -I${base}/zlib/include"
 
-#export LDFLAGS="${LDFLAGS} -L${base}/mpich/lib"
-#export CPPFLAGS="${CPPFLAGS} -I${base}/mpich/include"
 export PATH="${base}/mpich/bin:${PATH}"
 export CC=${base}/mpich/bin/mpicc
 export CXX=${base}/mpich/bin/mpicxx
