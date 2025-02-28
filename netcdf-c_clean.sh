@@ -11,7 +11,8 @@ autoreconf -i -f
 
 ./configure --prefix=${base}/netcdf_clean \
 	    --disable-netcdf-4 --disable-dap \
-	    --disable-plugins
+	    --disable-plugins --disable-byterange \
+	    --disable-zstandard-plugin --disable-libxml2 --disable-quantize
 # --disable-hdf5 
 #	    --disable-nczarr-filters --disable-nczarr \
 #	    --disable-parallel4 --enable-netcdf4 --enable-netcdf-4
