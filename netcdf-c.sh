@@ -29,8 +29,9 @@ autoreconf -i -f
 ./configure --prefix=${base}/netcdf \
 	    --enable-netcdf-4 --enable-shared \
 	    --enable-netcdf4 --enable-static --enable-pnetcdf --enable-cdf5 \
-	    --enable-parallel-tests --enable-hdf5
-#--disable-dap
+	    --enable-parallel-tests --enable-hdf5 --disable-byterange \
+	    --disable-dap
+
 automake -a -f 
 
 if (( $WAITCLICK )) ; then read -p "netcdf-c: compile? " -n1 -s ; fi
